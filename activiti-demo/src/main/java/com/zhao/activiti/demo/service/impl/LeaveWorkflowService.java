@@ -24,6 +24,7 @@ import com.zhao.activiti.demo.domain.Leave;
 @Service
 @Transactional
 public class LeaveWorkflowService {
+	
 	private LeaveService leaveService;
 	private RuntimeService runtimeService;
 	private TaskService taskService;
