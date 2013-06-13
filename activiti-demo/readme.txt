@@ -1,0 +1,1 @@
+Spring3.1.2+jpa+hibernate3.5.6+activiti5.12.1
