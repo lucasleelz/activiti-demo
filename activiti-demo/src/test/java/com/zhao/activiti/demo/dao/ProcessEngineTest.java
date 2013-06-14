@@ -19,7 +19,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * 检查ProcessEngine是否正常工作
  * 
- * @author 贤者以其昭昭
  * 
  */
 

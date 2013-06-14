@@ -7,6 +7,7 @@ import org.activiti.engine.HistoryService;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.history.HistoricProcessInstance;
+import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,7 @@ public class WorkflowProcessDefinitionService {
 	 */
 	public void deployAllFromClasspath() {
 		this.deployFromClasspath();
+		// this.deploySingleProcessForClassPath();
 	}
 
 	public void deployFromClasspath(String... processKey) {
@@ -89,7 +91,8 @@ public class WorkflowProcessDefinitionService {
 	 */
 	private void deploySingleProcess(ResourceLoader resourceLoader, String processKey) {
 		try {
-			String classpathResourceUrl = "classpath :/deployments/" + processKey + ".bar";
+			String classpathResourceUrl = "classpath:/deployment/" + processKey + ".bar"; // 部署的时候有乱码
+			// String classpathResourceUrl = "classpath:/deployments/" + processKey + ".zip";
 			Resource resource = resourceLoader.getResource(classpathResourceUrl);
 			InputStream inputStream = resource.getInputStream();
 			if (inputStream != null) {
@@ -105,10 +108,20 @@ public class WorkflowProcessDefinitionService {
 		}
 	}
 
+	private void deploySingleProcessForClassPath() {
+		repositoryService.createDeployment()//
+				.addClasspathResource("diagrams/leave/leave.bpmn")//
+				.addClasspathResource("diagrams/leave/leave.png")//
+				.addClasspathResource("diagrams/leave-dynamic-from/leave-dynamic-from.png")//
+				.addClasspathResource("diagrams/leave-dynamic-from/leave-dynamic-from.png")//
+				.deploy();//
+	}
+
 	/**
 	 * 重新部署某个流程定义
 	 * 
-	 * @param processKey流程定义KEY
+	 * @param processKey
+	 *            流程定义KEY
 	 */
 	public void redeploy(String... processKey) {
 		this.deployFromClasspath(processKey);

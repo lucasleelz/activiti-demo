@@ -75,6 +75,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.17</version>
 		</dependency>
+		<!-- oracle连接 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.4.0</version>
+		</dependency>
 		<!-- hibernate start -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -91,6 +97,8 @@
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>1.0.1.Final</version>
 		</dependency>
+
+
 		<!-- hibernate end -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
