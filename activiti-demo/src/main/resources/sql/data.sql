@@ -11,7 +11,6 @@ INSERT INTO ACT_ID_USER VALUES ('newtec', 1, 'newtec', 'newtec', 'newtect@gmail.
 INSERT INTO ACT_ID_MEMBERSHIP VALUES ('newtect', 'admin');
 INSERT INTO ACT_ID_MEMBERSHIP VALUES ('newtect', 'user');
 
-
 INSERT INTO ACT_ID_USER VALUES ('hruser', 1, 'zhangsan', 'Zhang', 'hr@gmail.com', '000000', '');
 INSERT INTO ACT_ID_MEMBERSHIP VALUES ('hruser', 'user');
 INSERT INTO ACT_ID_MEMBERSHIP VALUES ('hruser', 'hr');
@@ -23,3 +22,4 @@ INSERT INTO ACT_ID_MEMBERSHIP VALUES ('leaderuser', 'deptLeader');
 UPDATE ACT_GE_PROPERTY
 SET VALUE_ = '10'
 WHERE NAME_ = 'next.dbid';
+commit;

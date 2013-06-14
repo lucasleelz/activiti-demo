@@ -34,7 +34,7 @@
 
 	<bean id="hibernateJpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-		<property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+		<property name="databasePlatform" value="${hibernate.dialect}" />
 		<property name="showSql" value="true" />
 		<property name="generateDdl" value="true" />
 	</bean>
@@ -66,9 +66,11 @@
 		<property name="databaseSchemaUpdate" value="true" />
 		<property name="jobExecutorActivate" value="false" />
 		<property name="history" value="full" />
-
+		
+		<!-- 
+			<property name="activityFontName" value="宋体" />
+		 -->
 		<!-- 生成流程图的字体 -->
-		<property name="activityFontName" value="宋体" />
 		<!-- 找不到 labelFontName -->
 		<!-- <property name="labelFontName" value="宋体" /> -->
 	</bean>

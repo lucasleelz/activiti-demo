@@ -46,7 +46,6 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
 	</bean>
 
-
 	<!-- activiti start -->
 	<!-- activiti事物配置 -->
 	<bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">

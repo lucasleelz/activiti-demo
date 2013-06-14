@@ -20,16 +20,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 /**
  * Entity:Leave
  * 
- * @author 贤者以其昭昭
  * 
  */
 @Entity
-@Table(name = "ZHAO_LEAVE")
+@Table(name = "NEWTEC_LEAVE")
 public class Leave extends IdEntity implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private String processInstanceId; // 流程实例ID
@@ -59,6 +55,20 @@ public class Leave extends IdEntity implements Serializable {
 	private HistoricProcessInstance historicProcessInstance;
 	// 流程定义
 	private ProcessDefinition processDefinition;
+
+	
+	public Leave() {
+	}
+	
+	
+	public Leave(String userId, Date startTime, Date endTime, String leaveType,String reason) {
+		this.userId = userId;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.leaveType = leaveType;
+		this.reason = reason;
+	}
+
 
 	@Column
 	public String getProcessInstanceId() {

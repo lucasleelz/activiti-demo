@@ -8,7 +8,6 @@ import com.zhao.activiti.demo.domain.Leave;
 /**
  * 请假实体接口
  * 
- * @author 贤者以其昭昭
  * 
  */
 @Repository("leaveDao")
