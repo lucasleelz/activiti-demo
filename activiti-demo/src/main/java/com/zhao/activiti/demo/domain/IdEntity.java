@@ -8,9 +8,12 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class IdEntity {
 	protected Long id;
-
+	/**
+	 * 方便做不同数据库的测试
+	 * @return
+	 */
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}
